@@ -41,56 +41,52 @@
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0"
              id="nav-content">
             <ul class="list-reset lg:flex flex-1 items-center">
-
                 <li class="mr-3 ">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
-                              {% if page=='Pressure' %} bg-blue-600 {% endif %}
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
                        href="browse.php">Browse</a>
                 </li>
-
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
-                              {% if page=='Environmental Temperature' %} bg-blue-600 {% endif %}
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
                        href="add.php">Add</a>
                 </li>
             </ul>
-            <ul class="list-reset justify-end lg:flex flex-1 items-center">
 
+            <ul class="list-reset justify-end lg:flex flex-1 items-center">
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
-                              {% if page=='about' %} bg-blue-600 {% endif %}
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
                        href="#">About</a>
                 </li>
-
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
-                              {% if page=='about' %} bg-blue-600 {% endif %}
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
                        href="#">Contact</a>
                 </li>
-
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
-                              {% if page=='clock' %} bg-blue-600 {% endif %}
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
                        href="#">Links...</a>
                 </li>
-
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 rounded text-white
+                              transition-colors duration-500 ease-in-out
+                              no-underline hover:text-black hover:bg-gray-400
+                              hover:text-underline py-2 px-4"
+                       href="#">Legal</a>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
-

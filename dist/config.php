@@ -16,7 +16,7 @@ $dbPass = "saasPassword";
 $dbName = "saas_bread";
 
 $dsn = "mysql:host=$dbHost;dbname=$dbName";
-$options = array(
+$dbOptions = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 );
 
