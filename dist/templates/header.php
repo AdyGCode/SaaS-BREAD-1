@@ -21,7 +21,7 @@
     <title>SaaSy App 1</title>
 
     <!-- include style sheet(s) -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="bg-gray-200 font-sans leading-normal tracking-normal flex
              flex-col justify-between h-screen">

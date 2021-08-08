@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/dist/data/db_03_user_table.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/dist/data/db_04_gender_table.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/dist/data/db_05_animal_table.sql" dialect="MariaDB" />
+  </component>
+</project>

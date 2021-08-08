@@ -2,6 +2,7 @@
 
 This is a markdown document...
 
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/typography @tailwindcss/aspect-ratio
 ## Database
 
 - Database Name:    saas_bread

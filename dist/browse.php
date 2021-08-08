@@ -1,6 +1,6 @@
 <?php
 /**
- * Filename:    index.php
+ * Filename:    browse.php
  * Project:     SaaS-BREAD-1
  * Location:    dist\
  * Author:      Adrian Gould <adrian.gould@nmtafe.wa.edu.au>
@@ -8,15 +8,12 @@
  * Description:
  *   Basic BREAD/CRUD interaction with a Database using PHP.
  *
- *   This file is the "home page"
- *
- *
- *   html:5[TAB] creates a HTML5 page stub (Zen coding/Emmet Coding)
+ *   This file is the "browse users page"
  */
 
 require_once "./templates/header.php";
 
-require_once "config.php";
+require_once "./config/db.php";
 
 try {
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
@@ -29,7 +26,7 @@ try {
     echo "<pre>";
     echo $error->getMessage();
     echo "</pre>";
-    // No need to die as it is the end!
+    die(1);
 }
 ?>
 

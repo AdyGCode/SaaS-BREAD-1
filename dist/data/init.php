@@ -12,6 +12,22 @@
  *      2021/08/02  Added history to the file as a demonstration.
  */
 
+
+// List of files with initialisation SQL code
+$files = [
+    'db_01_drop.sql',
+    'db_02_create.sql',
+    'db_03_user_table.sql',
+    /* Add further initialisation files here */
+
+];
+
+$tables = [
+    "users",
+    /* Add any additional tables that are initialised here */
+
+];
+
 try {
     $rootUser = "root";
     $rootPass = "";
@@ -22,13 +38,6 @@ try {
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         )
     );
-
-    // List of files with initialisation SQL code
-    $files = [
-        'db_drop.sql',
-        'db_create.sql',
-        'db_tables.sql',
-    ];
 
     // Execute each file in turn...
     foreach ($files as $filename) {
@@ -44,7 +53,7 @@ try {
     die(0);
 }
 
-/* The seed data for the database */
+/* The special seed data for the users table */
 $users = [
     [
         "id" => 1,
@@ -61,8 +70,8 @@ $users = [
         "family_name" => 'Gould',
         "email" => 'adrian@example.com',
         "age" => 45,
-        "gender" => 'm',
-        "location" => 'Wagga-Wagga, NSW, Australia',
+        "gender" => 'M',
+        "location" => 'Wagga-Wagga, AU',
     ],
     [
         "id" => 10,
@@ -71,31 +80,14 @@ $users = [
         "email" => 'GIVEN_NAME@example.com',
         "age" => 0,
         "gender" => 'X',
-        "location" => 'Perth, WA, Australia',
+        "location" => 'Perth, AU'
     ],
-    [
-        "id" => null,
-        "given_name" => 'Jacques',
-        "family_name" => "d'Carre",  #  'd\'Carre'
-        "email" => 'jacques@example.com',
-        "age" => 0,
-        "gender" => 'O',
-        "location" => 'Paris, France',
-    ],
-    [
-        "id" => null,
-        "given_name" => 'Eileen',
-        "family_name" => 'Dover',
-        "email" => 'eileen@example.com',
-        "age" => 0,
-        "gender" => 'f',
-        "location" => 'Dover, UK',
-    ],
+
 ];
 
 
 try {
-    require_once "../config.php";
+    require_once "../db.php";
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
     echo "<h4>Adding Seed Users Data</h4>";
 
@@ -131,7 +123,7 @@ try {
 
 
 try {
-    require_once "../config.php";
+    require_once "../db.php";
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
     $sql = "SELECT * FROM users";
     $statement = $connection->prepare($sql);
@@ -156,3 +148,10 @@ try {
     echo "</pre>";
     // No need to die as it is the end!
 }
+
+echo "<h2>Initialisation complete</h2>";
+echo "<p>Click on <a href='../'>HOME</a> to go to the <a href='../'>home page</a>.</p>";
+/*
+ * In a real site you would also make sure that this code was either removed, or protected
+ * from re-running
+ */
