@@ -123,7 +123,7 @@ try {
 
 
 try {
-    require_once "../db.php";
+    require_once __DIR__."/../config/db.php";
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
     $sql = "SELECT * FROM users";
     $statement = $connection->prepare($sql);

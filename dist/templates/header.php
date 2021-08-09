@@ -30,7 +30,7 @@
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <a class="text-white no-underline hover:text-white hover:no-underline flex flex-row"
                href="/">
-                <img src="../img/saasy-icon.svg" alt="SaaSy App Logo"
+                <img src="/img/saasy-icon.svg" alt="SaaSy App Logo"
                      class="h-14 -my-2">
                 <span class="text-2xl pl-6 py-1">
 					SaaSy
@@ -46,14 +46,14 @@
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="browse.php">Browse</a>
+                       href="/users/browse.php">Browse</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="add.php">Add</a>
+                       href="/users/add.php">Add</a>
                 </li>
             </ul>
 
@@ -63,28 +63,28 @@
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="#">About</a>
+                       href="/about.php">About</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="#">Contact</a>
+                       href="/contact.php">Contact</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="#">Links...</a>
+                       href="/links.php">Links...</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 rounded text-white
                               transition-colors duration-500 ease-in-out
                               no-underline hover:text-black hover:bg-gray-400
                               hover:text-underline py-2 px-4"
-                       href="#">Legal</a>
+                       href="/legal.php">Legal</a>
                 </li>
             </ul>
         </div>

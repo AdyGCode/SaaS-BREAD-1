@@ -35,10 +35,10 @@
                         <a href="/" class="mx-2 ml-0 hover:text-blue-600">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="mx-2 hover:text-blue-600">About</a>
+                        <a href="/about.php" class="mx-2 hover:text-blue-600">About</a>
                     </li>
                     <li>
-                        <a href="#" class="mx-2 mr-0 hover:text-blue-600">Contact</a>
+                        <a href="/contact.php" class="mx-2 mr-0 hover:text-blue-600">Contact</a>
                     </li>
                 </ul>
             </div>

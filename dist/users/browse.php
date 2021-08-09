@@ -2,7 +2,7 @@
 /**
  * Filename:    browse.php
  * Project:     SaaS-BREAD-1
- * Location:    dist\
+ * Location:    dist\users\
  * Author:      Adrian Gould <adrian.gould@nmtafe.wa.edu.au>
  * Created:     27/7/21
  * Description:
@@ -11,9 +11,9 @@
  *   This file is the "browse users page"
  */
 
-require_once "./templates/header.php";
+require_once __DIR__."/../templates/header.php";
 
-require_once "./config/db.php";
+require_once __DIR__."/../config/db.php";
 
 try {
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
@@ -22,10 +22,12 @@ try {
     $results = $statement->execute();
     $numUsers = $statement->rowCount();
 } catch (PDOException $error) {
+    echo '<main class="container shadow-lg mx-auto bg-gray-50 mt-2 md:mt-8 p-6 mb-8 rounded-md">';
     echo "<h3>Error...</h3>";
     echo "<pre>";
     echo $error->getMessage();
     echo "</pre>";
+    echo '</main>';
     die(1);
 }
 ?>
@@ -108,7 +110,7 @@ try {
     </main>
 
 <?php
-require_once "./templates/footer.php";
+require_once __DIR__."/../templates/footer.php";
 
 
 
