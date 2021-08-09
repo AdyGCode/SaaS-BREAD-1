@@ -41,7 +41,7 @@ $colours = [
 $rangeValues = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
 
-echo '    <main class="container shadow-lg mx-auto bg-gray-50 p-6 mb-8 mt-8 rounded-md">';
+echo '<main class="container shadow-lg mx-auto bg-gray-50 p-6 mb-8 mt-8 rounded-md">';
 echo "<p class='pt-12'> </p>";
 foreach ($colours as $colour => $range) {
     echo "<div class='grid grid-cols-12 pt-1'> ";
