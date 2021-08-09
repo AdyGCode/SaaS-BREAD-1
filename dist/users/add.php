@@ -14,32 +14,29 @@
  */
 
 require_once __DIR__."/../templates/header.php";
+require_once __DIR__."/../config/db.php";
 
 ?>
-
     <main class="container shadow-lg mx-auto bg-gray-50 mt-24 p-6 mb-8 rounded-md">
 
         <?php
-        /* TODO: Add the code to validate input and then insert data when all inputs are valid */
-
         $errors = [];
         $gender = null;
 
         if (isset($_POST) && isset($_POST['saveButton'])) {
             $givenName = isset($_POST['givenName']) ? trim($_POST['givenName']) : "";
             $familyName = isset($_POST['familyName']) ? trim($_POST['familyName']) : "";
-            $email = isset($_POST['eMailAddress']) ? trim($_POST['eMailAddress']) : "";
-            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+            $email = isset($_POST['eMailAddress']) ? filter_var(trim($_POST['eMailAddress']), FILTER_SANITIZE_EMAIL): "";
             $age = isset($_POST['userAge']) ? trim($_POST['userAge']) : "";
             $gender = isset($_POST['userGender']) ? trim($_POST['userGender']) : "";
             $location = isset($_POST['userLocation']) ? trim($_POST['userLocation']) : "";
             if (strlen($givenName) < 1) {
                 $errors['Given Name'] = "Given Name is required.";
             }
-            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if (strlen(filter_var($email, FILTER_VALIDATE_EMAIL))<5) {
                 $errors['eMail'] = "A valid eMail Address must be given.";
             }
-            if (!stripos('FMOTUX', $gender)) {
+            if ($gender=="" || !strpos('-FMOTUXfmoutx', $gender)) {
                 $errors['Gender'] = "Please select a valid gender from the list.";
             }
             if (intval($age) <= 16) {
@@ -49,9 +46,7 @@ require_once __DIR__."/../templates/header.php";
                 $errors['Location'] = "Location must be given and contain a city/town and the 2 ISO country code.";
             }
 
-
             if (count($errors) == 0) {
-                require_once __DIR__."/../config/db.php";
 
                 $sql = "INSERT INTO users VALUES (null, :given_name, ".
                     ":family_name, :email, :age, :gender, :location, now(), null)";
@@ -69,7 +64,7 @@ require_once __DIR__."/../templates/header.php";
                     $statement->bindParam(':location', $location, PDO::PARAM_STR);
                     $statement->execute();
 
-                    header('Location: /users/', 200);
+                    header('Location: /users/browse.php', 200);
                 } catch (PDOException $error) {
                     echo "<h3>Error...</h3>";
                     echo "<p>";
@@ -80,8 +75,6 @@ require_once __DIR__."/../templates/header.php";
             }
         }
         ?>
-        <!-- TODO: Add error message code here -->
-
         <div class="mt-6 mb-6 p-0">
 
             <h2 class="text-3xl mb-6">Add User</h2>
@@ -204,12 +197,14 @@ require_once __DIR__."/../templates/header.php";
 
                 <div class="col-span-12 px-0 py-2 grid grid-cols-12">
                     <button id="saveButton" name="saveButton" role="button"
+                            type="submit"
                             class="rounded bg-green-200 hover:bg-green-900 text-gray-900
                             hover:text-white p-2 px-6 mr-3 border border-2 border-green-600
                             col-start-2 col-span-1">
                         Save
                     </button>
                     <button id="cancelButton" name="cancelButton" role="button"
+                            type="reset"
                             class="rounded bg-red-100 hover:bg-red-900 text-gray-900
                             hover:text-white p-2 px-4 mr-3 border border-2 border-red-600
                             col-span-1">

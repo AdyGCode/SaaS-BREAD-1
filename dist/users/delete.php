@@ -1,6 +1,6 @@
 <?php
 /**
- * Filename:    edit.php
+ * Filename:    delete.php
  * Project:     SaaS-BREAD-1
  * Location:    dist\users\
  * Author:      Adrian Gould <adrian.gould@nmtafe.wa.edu.au>
@@ -8,7 +8,7 @@
  * Description:
  *      Basic BREAD/CRUD interaction with a Database using PHP.
  *
- *      This file is the "Edit user page"
+ *      This file is the "Delete User page"
  *
  *
  *      html:5[TAB] creates a HTML5 page stub (Zen coding/Emmet Coding)

@@ -22,7 +22,8 @@ try {
     $results = $statement->execute();
     $numUsers = $statement->rowCount();
 } catch (PDOException $error) {
-    echo '<main class="container shadow-lg mx-auto bg-gray-50 mt-2 md:mt-8 p-6 mb-8 rounded-md">';
+    echo '<main class="container shadow-lg mx-auto bg-gray-50 mt-2 md:mt-8 p-6 mb-8 '.
+        ' rounded-md">';
     echo "<h3>Error...</h3>";
     echo "<pre>";
     echo $error->getMessage();
@@ -56,12 +57,19 @@ try {
                     $family_name = $aUser['family_name'];
                     $location = $aUser['location'];
                     ?>
-                    <tr class="hover:bg-blue-200 border-blue-700 border border-bottom-1">
+                    <tr class="hover:bg-blue-100 border-blue-700 border border-bottom-1 py-1 my-1">
                         <td class="p-1 pl-2"><?= $id ?></td>
                         <td class="p-1 pl-2"><?= $given_name ?></td>
                         <td class="p-1 pl-2"><?= $family_name ?></td>
                         <td class="p-1 pl-2"><?= $location ?></td>
-                        <td class="p-1 pl-2">Read Edit Delete</td>
+                        <td class="p-1 m-1">
+                            <a href="/users/read.php?id=<?= $id ?>"
+                               class="m-0 p-1 mr-2 text-bold
+                                      border border-1 border-blue-400 rounded
+                                      bg-blue-100 text-blue-700
+                                      hover:bg-blue-500 hover:text-white">Read</a>
+                            Edit Delete
+                        </td>
                     </tr>
                     <?php
                 }
@@ -104,13 +112,8 @@ try {
                 </tfoot>
             </table>
 
-
         </div>
 
     </main>
-
 <?php
 require_once __DIR__."/../templates/footer.php";
-
-
-
