@@ -35,7 +35,7 @@ START TRANSACTION;
 
 INSERT INTO saas_bread.users(id, given_name, family_name, email, age, gender, location)
 VALUES
-    (20, 'Jacques', 'd\'Carre' 'jacques@example.com', 0, 'O', 'Paris, France'),
+    (20, 'Jacques', 'd\'Carre', 'jacques@example.com', 0, 'O', 'Paris, France'),
     (null, 'Eileen', 'Dover', 'eileen@example.com', 0, 'f', 'Dover, UK'),
     (null, 'Robin', 'Money', 'Robin.Money@example.com', 83, 'T', 'Sawākin, SD'),
     (null, 'Manuel', 'Transmission', 'Manuel.Transmission@example.com', 97, 'F', 'Kalandia, PS'),
