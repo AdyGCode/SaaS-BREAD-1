@@ -14,28 +14,28 @@ require_once __DIR__."/../templates/header.php";
 $colours = [
     "black" => false,
     "white" => false,
-    "fuchsia" => true,
-    "indigo" => true,
-    "purple" => true,
-    "violet" => true,
-    "blue" => true,
-    "sky" => true,
-    "teal" => true,
-    "cyan" => true,
-    "emerald" => true,
-    "green" => true,
-    "orange" => true,
-    "amber" => true,
-    "yellow" => true,
-    "lime" => true,
-    "pink" => true,
-    "red" => true,
-    "rose" => true,
-    "coolGray" => true,
     "blueGray" => true,
+    "coolGray" => true,
     "gray" => true,
     "trueGray" => true,
     "warmGray" => true,
+    "fuchsia" => true,
+    "purple" => true,
+    "violet" => true,
+    "indigo" => true,
+    "blue" => true,
+    "sky" => true,
+    "cyan" => true,
+    "teal" => true,
+    "emerald" => true,
+    "green" => true,
+    "lime" => true,
+    "yellow" => true,
+    "amber" => true,
+    "orange" => true,
+    "red" => true,
+    "rose" => true,
+    "pink" => true,
 ];
 
 $rangeValues = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -54,7 +54,8 @@ foreach ($colours as $colour => $range) {
         }
         echo "<p class='col-span-1 py-4 text-center'>{$colour}</p>";
     } else {
-        echo "<p class='col-span-1 bg-{$colour} py-4'>  </p>";
+        $fg = $colour=="black" ? "text-white" : "text-black";
+        echo "<p class='col-span-1 bg-{$colour} {$fg} py-4 text-center'>{$colour} </p>";
     }
     echo "</div>";
 }
