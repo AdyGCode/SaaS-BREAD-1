@@ -43,7 +43,7 @@ require_once __DIR__."/../config/db.php";
                 $errors['Age'] = "Age must be a positive integer greater than or equal to 16.";
             }
             if (strlen($location) <= 1) {
-                $errors['Location'] = "Location must be given and contain a city/town and the 2 ISO country code.";
+                $errors['Location'] = "Location must be given and contain a city/town and the 2 character ISO country code.";
             }
 
             if (count($errors) == 0) {
@@ -101,7 +101,7 @@ require_once __DIR__."/../config/db.php";
             }
             ?>
 
-            <form action="<?= $_SERVER['PHP_SELF']; ?>"
+            <form action="<?= $_SERVER['REQUEST_URI']; ?>"
                   method="post"
                   class="grid grid-cols-12">
 
