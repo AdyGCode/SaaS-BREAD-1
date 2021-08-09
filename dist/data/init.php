@@ -87,7 +87,7 @@ $users = [
 
 
 try {
-    require_once "../db.php";
+    require_once "../config/db.php";
     $connection = new PDO($dsn, $dbUser, $dbPass, $dbOptions);
     echo "<h4>Adding Seed Users Data</h4>";
 
